@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/angular.js"></script>
+    <script src="../js/Students.js"></script>
+    <script src="https://kit.fontawesome.com/4c5c4d188a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <title>Đăng Ký</title>
+</head>
+<body ng-app="register">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img class="img-fluid"style="float: left;" width="100px" src="../Images/logo.png" alt="..." height="25px"> <h2 style="margin-top: 25px;padding-left: 5px;">Testing Online</h2>
+      </a>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav" style="float: left;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/gioithieu.html">Giới thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/lienhe.html">Liên hệ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Gợi ý</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hỏi đáp</a>
+          </li>
+        </ul>
+        <ul class="nav justify-content-end d-flex" style="float: right;">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Tài khoản
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+              <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+              <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+              <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+              <li><a class="dropdown-item" href="#">Cập nhật tài khoản</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+      <div class="container">
+        <div class="card" style="width:800px;margin-left:15rem;">
+          <h5 class="card-header text-center"><i class="fa-solid fa-registered"></i> Đăng ký tài khoản mới</h5>
+          <div class="card-body">
+            <form action="" class="was-validated" ng-controller="dangky">
+              <div class="form-floating mb-3 col-md-12">
+                <input type="text" class="form-control" placeholder="Username" id="Username" ng-model="username" name="username" required autofocus>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                  Vui lòng nhập Username.
+                </div>
+                <label for="floatingInputUsername"><i class="fa-solid fa-user"></i> Username</label>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-3 col-md-6">
+                  <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password" id="password " required autofocus>
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Vui lòng nhập Password.
+                  </div>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-key"></i> Password</label>
+                </div>
+                <div class="form-floating mb-3 col-md-6">
+                  <input type="password" class="form-control"  placeholder="Password" ng-model="cfpassword" id="cfpassword" name="cfpassword" required autofocus>
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Xác nhận Password.
+                  </div>  
+                  <label for="floatingInputUsername"><i class="fa-solid fa-key"></i> Confirm Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-3 col-md-6">
+                  <input type="text" class="form-control" id="lastname" ng-model="lastname" name="lastname" placeholder="Last Name"required autofocus>
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                   Vui lòng nhập họ tên của bạn.
+                  </div>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Họ</label>
+                </div>
+                <div class="form-floating mb-3 col-md-6">
+                  <input type="text" class="form-control" id="firstname" ng-model="firstname" name="firstname" placeholder="First Name" required autofocus>
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                   Vui lòng nhập tên của bạn.
+                   </div>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Tên</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-3 col-md-6">
+                  <input type="text" class="form-control" id="phonenumber" ng-model="phonenumber" name="phonenumber" placeholder="Phone" required autofocus>
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Vui lòng nhập Số điện thoại của bạn.
+                    </div>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-phone"></i> PhoneNumber</label>
+                </div>
+                <div class="form-floating mb-3 col-md-6">
+                  <input type="email" class="form-control" id="email" name="email" ng-model="email" placeholder="Email"  required autofocus>
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Vui lòng nhập Email của bạn.
+                    </div>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-at"></i> Email</label>
+                </div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                 <a href="">Chấp nhập điều khoản và sử dụng</a>
+                </label>
+              </div>
+              <div class="row">
+                <button type="submit"id="submit" name="submit" class="btn btn-primary btn-lg col-ms-auto"><i class="fa-regular fa-registered"></i> Đăng ký</button>
+                <span class="text-center" style="margin-top: 10px;">Already have an account?<a href="../html/dangnhap.html">Đăng nhập</a></span>
+              </div>
+            </form>          
+           </div>
+        </div> 
+       </div>
+       <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section
+          class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+        >
+          <!-- Left -->
+          <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+          </div>
+          <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+      
+        <!-- Section: Links  -->
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>Testing Online
+                </h6>
+                <p>
+                 Trung tâm đào tạo lập trình viên từ cơ bản đến nâng cao.
+                 Đảm bảo 100% giới thiệu việc làm ngay sau khi tốt nghiệp
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Products
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Java</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">C/C#</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Android</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">SQL/MySQL</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Useful links
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Pricing</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Settings</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Orders</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Help</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Contact
+                </h6>
+                <p><i class="fas fa-home me-3"></i> District 7,Phu Thuan awards, HCM</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>datthuynh30102002@gmail.com
+                </p>
+                <p><i class="fas fa-phone me-3"></i> +84 65057229</p>
+                <p><i class="fas fa-print me-3"></i> +84 65057229</p>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Testing Online</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+</body>
+<script>
+  var app=angular.module("register",[]);
+  app.controller("dangky",funct);
+  function funct($scope){
+$scope.dangky=function(){
+var u=$scope.username;
+var cf=$scope.confirmpassword;
+var p=$scope.password;
+var f=$scope.firstname;
+var l=$scope.lastname;
+var e=$scope.email;
+var p=$scope.phonenumber;
+var sv;
+for()
+}
+  }
+</script>
+</html>
