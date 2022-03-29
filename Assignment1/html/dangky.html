@@ -129,7 +129,7 @@
                 </label>
               </div>
               <div class="row">
-                <button type="submit"id="submit" name="submit" class="btn btn-primary btn-lg col-ms-auto"><i class="fa-regular fa-registered"></i> Đăng ký</button>
+                <button type="button" id="submit" ng-click="dangky1()" name="submit" class="btn btn-primary btn-lg col-ms-auto"><i class="fa-regular fa-registered"></i> Đăng ký</button>
                 <span class="text-center" style="margin-top: 10px;">Already have an account?<a href="../html/dangnhap.html">Đăng nhập</a></span>
               </div>
             </form>          
@@ -241,17 +241,58 @@
   var app=angular.module("register",[]);
   app.controller("dangky",funct);
   function funct($scope){
-$scope.dangky=function(){
+$scope.dangky1=function(){
 var u=$scope.username;
 var cf=$scope.confirmpassword;
 var p=$scope.password;
 var f=$scope.firstname;
 var l=$scope.lastname;
 var e=$scope.email;
-var p=$scope.phonenumber;
+var ph=$scope.phonenumber;
 var sv;
-for()
+var flat=true;
+var hs;
+for(var i=0;i<lisths.length;i++){
+  sv=lisths[i];
+if(u==null){
+  flat=false;
+  break;
+}
+ else if(p==null){
+  flat=false;
+  break;
+}
+else if(cf==null){
+  flat=false;
+  break;
+}
+else if(cf!=p){
+  flat=false;
+  break;
+}
+else if(f==null && l==null){
+ flat=false;
+ break; 
+}
+else if(ph==null){
+  flat=false;
+  break;
+}
+}
+if(flat){
+  localStorage.setItem("username",sv.username);
+  localStorage.setItem("password",sv.password);
+  localStorage.setItem("lastname",sv.lastname);
+  localStorage.setItem("firstname",sv.firstname);
+  localStorage.setItem("email",sv.email);
+  localStorage.setItem("phonenumber",sv.phonenumber);
+  alert('đăng ký thành công');
+  document.location="index.html"
+}
+else{
+  alert('đăng ký thất bại');
 }
   }
+}
 </script>
 </html>
