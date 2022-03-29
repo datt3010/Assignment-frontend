@@ -68,7 +68,7 @@
           <div class="card-body">
             <form action="" class="was-validated" ng-controller="dangky">
               <div class="form-floating mb-3 col-md-12">
-                <input type="text" class="form-control" placeholder="Username" id="Username" ng-model="username" name="username" required autofocus>
+                <input type="text" class="form-control" placeholder="Username" id="Username" ng-model="sv.username" name="username" required autofocus>
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                   Vui lòng nhập Username.
                 </div>
@@ -76,7 +76,7 @@
               </div>
               <div class="row">
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password" id="password " required autofocus>
+                  <input type="password" class="form-control" id="password" ng-model="sv.password" placeholder="Password" id="password " required autofocus>
                   <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     Vui lòng nhập Password.
                   </div>
@@ -92,14 +92,14 @@
               </div>
               <div class="row">
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="text" class="form-control" id="lastname" ng-model="lastname" name="lastname" placeholder="Last Name"required autofocus>
+                  <input type="text" class="form-control" id="lastname" ng-model="sv.lastname" name="lastname" placeholder="Last Name"required autofocus>
                   <div id="validationServerUsernameFeedback" class="invalid-feedback">
                    Vui lòng nhập họ tên của bạn.
                   </div>
                   <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Họ</label>
                 </div>
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="text" class="form-control" id="firstname" ng-model="firstname" name="firstname" placeholder="First Name" required autofocus>
+                  <input type="text" class="form-control" id="firstname" ng-model="sv.firstname" name="firstname" placeholder="First Name" required autofocus>
                   <div id="validationServerUsernameFeedback" class="invalid-feedback">
                    Vui lòng nhập tên của bạn.
                    </div>
@@ -108,14 +108,14 @@
               </div>
               <div class="row">
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="text" class="form-control" id="phonenumber" ng-model="phonenumber" name="phonenumber" placeholder="Phone" required autofocus>
+                  <input type="text" class="form-control" id="phonenumber" ng-model="sv.phonenumber" name="phonenumber" placeholder="Phone" required autofocus>
                   <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     Vui lòng nhập Số điện thoại của bạn.
                     </div>
                   <label for="floatingInputUsername"><i class="fa-solid fa-phone"></i> PhoneNumber</label>
                 </div>
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="email" class="form-control" id="email" name="email" ng-model="email" placeholder="Email"  required autofocus>
+                  <input type="email" class="form-control" id="email" name="email" ng-model="sv.email" placeholder="Email"  required autofocus>
                   <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     Vui lòng nhập Email của bạn.
                     </div>
