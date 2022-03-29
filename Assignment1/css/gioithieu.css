@@ -1,0 +1,6 @@
+@media (max-width<720px){
+    .container{
+        color:red;
+        font-size: 9px;
+    }
+}
