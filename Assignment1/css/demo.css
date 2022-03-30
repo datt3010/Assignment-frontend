@@ -17,13 +17,14 @@ margin-left: 60px;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }.col-lg-12 .list-group li a{
+    color:red;
    padding-top: 30px;
    padding-left: 30px;
     list-style: none;
     text-decoration: none;
 }
 .col-lg-12 ul li:hover{
-    background-color: gray;
+    background-color:beige;
 }
 .col-lg-12 .list-group li{
     height: 40px;
