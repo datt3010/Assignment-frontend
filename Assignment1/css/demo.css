@@ -4,3 +4,27 @@
 .accordion-body .hihi{
     margin-top:20px;
 }
+.offcanvas .offcanvas-body .list-group{
+    border:none;
+}
+.offcanvas .offcanvas-header img{
+margin-top: 20px;
+margin-left: 60px;
+}
+.offcanvas-start{
+    background-image: url(../Images/bg1.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}.col-lg-12 .list-group li a{
+   padding-top: 30px;
+   padding-left: 30px;
+    list-style: none;
+    text-decoration: none;
+}
+.col-lg-12 ul li:hover{
+    background-color: gray;
+}
+.col-lg-12 .list-group li{
+    height: 40px;
+}

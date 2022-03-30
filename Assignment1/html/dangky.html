@@ -260,33 +260,24 @@ var e=$scope.email;
 var ph=$scope.phonenumber;
 var sv;
 var flat=true;
-var hs;
-for(var i=0;i<lisths.length;i++){
-  sv=lisths[i];
+  sv=$scope.lisths;
 if(u==null){
   flat=false;
-  break;
 }
  else if(p==null){
   flat=false;
-  break;
 }
 else if(cf==null){
   flat=false;
-  break;
 }
 else if(cf!=p){
   flat=false;
-  break;
 }
 else if(f==null && l==null){
  flat=false;
- break; 
 }
 else if(ph==null){
   flat=false;
-  break;
-}
 }
 if(flat){
   localStorage.setItem("username",sv.username);
