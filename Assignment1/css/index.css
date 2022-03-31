@@ -1,13 +1,21 @@
-body{
+/* body{
     background-image: url(../Images/bg1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
+} */
 .accordion-body .hihi:hover{
     color: red;
 }
 .accordion-body .hihi{
     margin-top:20px;
+}
+@media(max-width:900px){
+    .nav-item{
+        color:red;
+    }
+    .btn-group{
+        margin-right: 32rem;
+    }
 }

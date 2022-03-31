@@ -1,31 +1,26 @@
-.accordion-body .hihi:hover{
-    color: red;
-}
-.accordion-body .hihi{
-    margin-top:20px;
-}
-.offcanvas .offcanvas-body .list-group{
-    border:none;
-}
-.offcanvas .offcanvas-header img{
-margin-top: 20px;
-margin-left: 60px;
-}
-.offcanvas-start{
-    background-image: url(../Images/bg1.jpg);
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}.col-lg-12 .list-group li a{
-    color:red;
-   padding-top: 30px;
-   padding-left: 30px;
-    list-style: none;
-    text-decoration: none;
-}
-.col-lg-12 ul li:hover{
-    background-color:beige;
-}
-.col-lg-12 .list-group li{
-    height: 40px;
-}
+@media (min-width : 992px) {
+    .offcanvas {
+      visibility      : visible;
+      position        : relative;
+      background      : none;
+      border          : none;
+      justify-content : end;
+      color           : red;
+    }
+  }
+  
+  @media (max-width : 992px) {
+    .offcanvas {
+      width : 250px !important;
+    }
+    .offcanvas-start-lg {
+      top          : 0;
+      left         : 0;
+      border-right : 1px solid rgba(0, 0, 0, .2);
+      transform    : translateX(-100%);
+    }
+  }
+  
+  .navbar-nav li a {
+    color: white !important;
+  }
