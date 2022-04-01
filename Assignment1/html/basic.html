@@ -25,13 +25,13 @@
         <div class="collapse navbar-collapse" id="navbarMobileToggle">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#!index"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                    <a class="nav-link active" aria-current="page" href="#!layout"><i class="fa-solid fa-house"></i> Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../html/gioithieu.html"><i class="fa-solid fa-earth-americas"></i> giới thiệu</a>
+                    <a class="nav-link" href="#!gioithieu"><i class="fa-solid fa-earth-americas"></i> giới thiệu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../html/lienhe.html"><i class="fa-solid fa-phone"></i> Liên hệ</a>
+                  <a class="nav-link" href="#!lienhe"><i class="fa-solid fa-phone"></i> Liên hệ</a>
               </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-solid fa-hand"></i> Gợi ý</a>
@@ -63,8 +63,8 @@
     </div>
 </nav>
       <!-- Page Content -->
-      <div class="container" ng-view >
-       <!-- <div class="row">
+      <div class="container"ng-view >
+       <div class="row">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -92,7 +92,7 @@
             </button>
           </div>
        </div>
-       <div class="row">
+       <div class="row" >
            <div class="col-sm-9">
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
@@ -151,7 +151,7 @@
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body list-group" style="width:273px;margin-top:-16px;">
-                      <a href="#" class="list-group-item list-group-item-action" ng-repeat="mh in cacmonhoc| filter :'java'|orderBy:'Name'">{{mh.Name|lowercase}}</a>
+                      <a href="#!quiz/{{mh.Id}}/{{mh.Name}}" class="list-group-item list-group-item-action" ng-repeat="mh in cacmonhoc| filter :'java'|orderBy:'Name'">{{mh.Name|lowercase}}</a>
                     </div>
                   </div>
                 </div>
@@ -218,8 +218,8 @@
               </div>
             </div>
            </div>
-           <di  v class="row">
-            <nav aria-label="Page navigation example">
+           <div class="row next nextstep">
+            <nav aria-label="Page navigation example" class="nextstep">
                 <ul class="pagination justify-content-center">
                   <li class="page-item disabled">
                     <a class="page-link">Previous</a>
@@ -232,8 +232,8 @@
                   </li>
                 </ul>
               </nav>
-        </di>
-       </div> -->
+        </div>
+       </div>
       </div>
       <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
@@ -344,9 +344,9 @@
     $routeProvider
     .when("/gioithieu",{templateUrl:"gioithieu.html"})
     .when("/lienhe",{templateUrl:"lienhe.html"})
-    .when("/index",{templateUrl:""})
+    .when("/layout",{templateUrl:"layout.html"})
     .when("/quiz/:idMH/:tenMH",{templateUrl:"quiz.html",controller:"loadquiz"})
-    .otherwise({templateUrl:"layout.html"})
+    .otherwise({redirectTo:"/layout"});
   });
   app.controller("monhoc",function($scope,$http){
     $scope.cacmonhoc=[];
@@ -355,10 +355,12 @@
     })
   });
   app.controller("loadquiz",function($scope,$http,$routeParams){
+    $scope.pagesize=4;
+    $scope.start=0;
     $scope.caccauhoi=[];
-    $scope.Id=$routeParams.Id;
+    $scope.idMH=$routeParams.idMH;
     $scope.tenMH=$routeParams.tenMH;
-    $http.get("../js/Quizs/"+ $scope.Id+".js").then(
+    $http.get("../js/Quizs/"+ $scope.idMH+".js").then(
       function(d){
         $scope.caccauhoi=d.data;
       },
@@ -366,6 +368,23 @@
         alert('Lỗi không load được các môn học !!');
       }
     );
+    $scope.next=function(){
+      if($scope.start<$scope.caccauhoi.length-$scope.pagesize){
+        $scope.start+=$scope.pagesize
+      }
+    };
+   $scope.prev=function(){
+     if($scope.start>0){
+       $scope.start-=$scope.pagesize;
+     }
+   };
+   $scope.first=function(){
+     $scope.start=0;
+   };
+   $scope.last=function(){
+     sotrang=Math.ceil($scope.caccauhoi.length/$scope.pagesize);
+     $scope.start=(sotrang -1)*$scope.pagesize;
+   }
   })
 </script>
 </html>

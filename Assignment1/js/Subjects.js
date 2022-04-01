@@ -98,5 +98,10 @@
         "Id": "WEBU",
         "Name": "Xây dựng trang web",
         "Logo": "WEBU.jpg"
+    },
+    {
+        "Id":"PYTHON",
+        "Name":"Lập trinh Python cơ bản",
+        "Logo":"PYTHON.jpg"
     }
 ]
