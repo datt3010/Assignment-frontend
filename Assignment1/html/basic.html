@@ -42,23 +42,34 @@
     $scope.pageSize=4;
     $scope.start=0;
     $http.get("../js/Subjects.js").then(function(d){
-      $scope.cacmonhoc=d.data
+      $scope.cacmonhoc=d.data;
     });
     $scope.next=function(){
       if($scope.start<$scope.cacmonhoc.length-$scope.pageSize){
         $scope.start+=$scope.pageSize;
       }
-    };
+    }
     $scope.prev=function(){
       if($scope.start>0){
         $scope.start-=$scope.pageSize;
       }
-    };
+      {
+        alert('Bạn đang ở đầu trang');   
+        return;   
+      }
+    }
+    $scope.first=function(){
+      $scope.start=0;
+    }
+    $scope.last=function(){
+      sotrang=Math.ceil($scope.cacmonhoc.length/$scope.pageSize);
+      $scope.start=(sotrang-1)*$scope.pageSize;
+    }
   });
   app.controller("loadquiz",function($scope,$http,$routeParams){
-    $scope.pagesize=4;
-    $scope.start=0;
     $scope.caccauhoi=[];
+    $scope.start=0;
+    $scope.pageSize=4;
     $scope.idMH=$routeParams.idMH;
     $scope.tenMH=$routeParams.tenMH;
     $http.get("../js/Quizs/"+ $scope.idMH+".js").then(
@@ -70,22 +81,22 @@
       }
     );
     $scope.next=function(){
-      if($scope.start<$scope.caccauhoi.length-$scope.pagesize){
-        $scope.start+=$scope.pagesize
+      if($scope.start<$scope.caccauhoi.length-$scope.pageSize){
+        $scope.start+=$scope.pageSize;
       }
-    };
-   $scope.prev=function(){
-     if($scope.start>0){
-       $scope.start-=$scope.pagesize;
-     }
-   };
-   $scope.first=function(){
-     $scope.start=0;
-   };
-   $scope.last=function(){
-     sotrang=Math.ceil($scope.caccauhoi.length/$scope.pagesize);
-     $scope.start=(sotrang -1)*$scope.pagesize;
-   }
+    }
+    $scope.prev=function(){
+      if($scope.start>0){
+        $scope.start-=$scope.pageSize;
+      }
+    }
+    $scope.first=function(){
+      $scope.start=0;
+    }
+    $scope.last=function(){
+      sotrang=Math.ceil($scope.caccauhoi.length/$scope.pageSize);
+      $scope.start=(sotrang-1)*$scope.pageSize;
+    }
   })
 </script>
 </html>
