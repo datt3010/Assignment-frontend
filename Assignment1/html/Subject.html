@@ -1,0 +1,12 @@
+<div class="row row-cols-1 row-cols-md-2 g-4" ng-controller="monhoc">
+    <div class="col" ng-repeat="mh in cacmonhoc|limitTo:pageSize:start|orderBy:'Name'">
+      <div class="card">
+        <img src="{{'../Images/logos/'+mh.Logo}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{mh.Name|uppercase}}</h5>
+          <p class="card-text">Java là một ngôn ngữ lập trình hướng đối tượng (OOP) và dựa trên các lớp (class), ban đầu được phát triển bởi Sun Microsystems do James Gosling khởi xướng và phát hành vào năm 1995. Khác với phần lớn ngôn ngữ lập trình thông thường, thay vì biên dịch mã nguồn thành mã máy hoặc thông dịch mã nguồn khi chạy, Java được thiết kế để biên dịch mã nguồn thành bytecode, bytecode sau đó sẽ được môi trường thực thi (runtime environment) chạy.</p>
+           <a href="../html/quiz.html"><button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-graduation-cap"></i> Học ngay</button></a>
+        </div>
+      </div>
+    </div>
+  </div>

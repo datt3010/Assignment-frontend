@@ -24,3 +24,13 @@
   .navbar-nav li a {
     color: white !important;
   }
+  .row .col-sm-6 .btn-1{
+    width: 100px;
+    margin:10px;
+    margin-left: 16rem;
+  }
+  .row .col-sm-6 .btn-2{
+    width: 100px;
+    margin-top: 10px;
+    margin-right:14rem;
+  }
