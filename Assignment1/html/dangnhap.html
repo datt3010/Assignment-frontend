@@ -12,225 +12,39 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <title>Đăng nhập</title>
 </head>
-<body ng-app="myapp">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="../html/index.html">
-        <img class="img-fluid"style="float: left;" width="100px" src="../Images/logo.png" alt="..." height="25px"> <h2 style="margin-top: 25px;padding-left: 5px;">Testing Online</h2>
-      </a>
-    </div>
-  </nav>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav" style="float: left;">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../html/index.html">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../html/gioithieu.html">Giới thiệu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../html/lienhe.html">Liên hệ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Gợi ý</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Hỏi đáp</a>
-          </li>
-        </ul>
-        <ul class="nav justify-content-end d-flex" style="float: right;">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-             Tài khoản
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Đăng ký</a></li>
-              <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-              <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-              <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
-              <li><a class="dropdown-item" href="#">Cập nhật tài khoản</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-      <div class="container" ng-controller="login">
-        <div class="card"style="width:550px; margin-left:19rem;">
-          <h5 class="card-header text-center"><i class="fa-solid fa-registered"></i> Đăng nhập</h5>
-          <div class="card-body" style="width:auto;">
-            <form action=""class="was-validated">
-              <div class="form-floating mb-3 col-md-12">
-                <input type="text" class="form-control" id="floatingInputUsername" placeholder="Password" ng-model="username" id="Username" name="username" required autofocus>
-                <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                  Vui lòng nhập Username.
-                </div>
-                <label for="floatingInputUsername"><i class="fa-solid fa-user"></i> Username</label>
-              </div>
-              <div class="row">
-                <div class="form-floating mb-3 col-md-12">
-                  <input type="password" class="form-control" ng-model="password" id="floatingInputUsername" placeholder="Password" id="Password"name="password" required autofocus>
-                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                    Vui lòng nhập Password.
-                  </div>
-                  <label for="floatingInputUsername"><i class="fa-solid fa-key"></i> Password</label>
-                </div>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                 <a href="">Chấp nhập điều khoản và sử dụng</a>
-                </label>
-              </div>
-              <div class="row">
-                <button type="button" name="submit" ng-click="dangnhap()" class="btn btn-primary btn-lg col-ms-auto"> Đăng nhập</button>
-                <span class="text-center" style="margin-top: 10px;">Need an account?<a href="../html/dangky.html">Đăng ký</a></span>
-              </div>
-            </form>          
-           </div>
-        </div> 
-       </div>
-       <footer class="text-center text-lg-start bg-light text-muted">
-        <!-- Section: Social media -->
-        <section
-          class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-        >
-          <!-- Left -->
-          <div class="me-5 d-none d-lg-block">
-            <span>Get connected with us on social networks:</span>
-          </div>
-          <!-- Right -->
-        </section>
-        <!-- Section: Social media -->
-      
-        <!-- Section: Links  -->
-        <section class="">
-          <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <!-- Content -->
-                <h6 class="text-uppercase fw-bold mb-4">
-                  <i class="fas fa-gem me-3"></i>Testing Online
-                </h6>
-                <p>
-                 Trung tâm đào tạo lập trình viên từ cơ bản đến nâng cao.
-                 Đảm bảo 100% giới thiệu việc làm ngay sau khi tốt nghiệp
-                </p>
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Products
-                </h6>
-                <p>
-                  <a href="#!" class="text-reset">Java</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">C/C#</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Android</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">SQL/MySQL</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Useful links
-                </h6>
-                <p>
-                  <a href="#!" class="text-reset">Pricing</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Settings</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Orders</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Help</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Contact
-                </h6>
-                <p><i class="fas fa-home me-3"></i> District 7,Phu Thuan awards, HCM</p>
-                <p>
-                  <i class="fas fa-envelope me-3"></i>datthuynh30102002@gmail.com
-                </p>
-                <p><i class="fas fa-phone me-3"></i> +84 65057229</p>
-                <p><i class="fas fa-print me-3"></i> +84 65057229</p>
-              </div>
-              <!-- Grid column -->
+  <div class="container" ng-controller="login">
+    <div class="card"style="width:550px; margin-left:19rem;">
+      <h5 class="card-header text-center"><i class="fa-solid fa-registered"></i> Đăng nhập</h5>
+      <div class="card-body" style="width:auto;">
+        <form action=""class="was-validated">
+          <div class="form-floating mb-3 col-md-12">
+            <input type="text" class="form-control" id="floatingInputUsername" placeholder="Password" ng-model="username" id="Username" name="username" required autofocus>
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              Vui lòng nhập Username.
             </div>
-            <!-- Grid row -->
+            <label for="floatingInputUsername"><i class="fa-solid fa-user"></i> Username</label>
           </div>
-        </section>
-        <!-- Section: Links  -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2021 Copyright:
-          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Testing Online</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-</body>
-<script>
-var app=angular.module("myapp",[]);
-app.controller("login",funct);
-function funct($scope){
-$scope.dangnhap=function(){
-  var u=$scope.username;
-  var p=$scope.password;
-  var tc=false;
-  var sv;
-  for(var i=0;i<lisths.length;i++){
-    sv=lisths[i];
-    if(u==sv.username && p==sv.password){
-      tc=true;
-      break;
-    }
-    else if(u==null && p==null){
-      tc=false;
-      break;
-    }
-    else if(u!=sv.username && p!=sv.password){
-      tc=false;
-      break;
-    }
-  }
-  if(tc){
-    sessionStorage.setItem("username",sv.username);
-    sessionStorage.setItem("password",sv.password);
-    document.location="index.html"
-  }
-  else{
-    alert('Đăng nhập thất bại');
-  }
-}
-}
-</script>
+          <div class="row">
+            <div class="form-floating mb-3 col-md-12">
+              <input type="password" class="form-control" ng-model="password" id="floatingInputUsername" placeholder="Password" id="Password"name="password" required autofocus>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                Vui lòng nhập Password.
+              </div>
+              <label for="floatingInputUsername"><i class="fa-solid fa-key"></i> Password</label>
+            </div>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+             <a href="">Chấp nhập điều khoản và sử dụng</a>
+            </label>
+          </div>
+          <div class="row">
+            <button type="button" name="submit" ng-click="dangnhap()" class="btn btn-primary btn-lg col-ms-auto"> Đăng nhập</button>
+            <span class="text-center" style="margin-top: 10px;">Need an account?<a href="../html/dangky.html">Đăng ký</a></span>
+          </div>
+        </form>          
+       </div>
+    </div> 
+   </div>
 </html>

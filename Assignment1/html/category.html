@@ -11,7 +11,7 @@
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body list-group" style="width:273px;margin-top:-16px;">
-            <a href="#!quiz/{{mh.Id}}/{{mh.Name}}" class="list-group-item list-group-item-action" ng-repeat="mh in cacmonhoc| filter :'java'|orderBy:'Name'">{{mh.Name|lowercase}}</a>
+            <a ng-click="checkuser()" href="#!quiz/{{mh.Id}}/{{mh.Name}}" class="list-group-item list-group-item-action" ng-repeat="mh in cacmonhoc| filter :'java'|orderBy:'Name'">{{mh.Name|lowercase}}</a>
           </div>
         </div>
       </div>

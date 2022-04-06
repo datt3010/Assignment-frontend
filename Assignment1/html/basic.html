@@ -34,69 +34,24 @@
     .when("/gioithieu",{templateUrl:"gioithieu.html"})
     .when("/lienhe",{templateUrl:"lienhe.html"})
     .when("/layout",{templateUrl:"layout.html"})
+    .when("/dangnhap",{templateUrl:"dangnhap.html"})
+    .when("/dangky",{templateUrl:"dangky.html"})
     .when("/quiz/:idMH/:tenMH",{templateUrl:"quiz.html",controller:"loadquiz"})
     .otherwise({redirectTo:"/layout"});
   });
-  app.controller("monhoc",function($scope,$http){
-    $scope.cacmonhoc=[];
-    $scope.pageSize=4;
-    $scope.start=0;
-    $http.get("../js/Subjects.js").then(function(d){
-      $scope.cacmonhoc=d.data;
-    });
-    $scope.next=function(){
-      if($scope.start<$scope.cacmonhoc.length-$scope.pageSize){
-        $scope.start+=$scope.pageSize;
-      }
-    }
-    $scope.prev=function(){
-      if($scope.start>0){
-        $scope.start-=$scope.pageSize;
-      }
-      {
-        alert('Bạn đang ở đầu trang');   
-        return;   
-      }
-    }
-    $scope.first=function(){
-      $scope.start=0;
-    }
-    $scope.last=function(){
-      sotrang=Math.ceil($scope.cacmonhoc.length/$scope.pageSize);
-      $scope.start=(sotrang-1)*$scope.pageSize;
-    }
-  });
-  app.controller("loadquiz",function($scope,$http,$routeParams){
-    $scope.caccauhoi=[];
-    $scope.start=0;
-    $scope.pageSize=4;
-    $scope.idMH=$routeParams.idMH;
-    $scope.tenMH=$routeParams.tenMH;
-    $http.get("../js/Quizs/"+ $scope.idMH+".js").then(
-      function(d){
-        $scope.caccauhoi=d.data;
-      },
-      function(d){
-        alert('Lỗi không load được các môn học !!');
-      }
-    );
-    $scope.next=function(){
-      if($scope.start<$scope.caccauhoi.length-$scope.pageSize){
-        $scope.start+=$scope.pageSize;
-      }
-    }
-    $scope.prev=function(){
-      if($scope.start>0){
-        $scope.start-=$scope.pageSize;
-      }
-    }
-    $scope.first=function(){
-      $scope.start=0;
-    }
-    $scope.last=function(){
-      sotrang=Math.ceil($scope.caccauhoi.length/$scope.pageSize);
-      $scope.start=(sotrang-1)*$scope.pageSize;
-    }
+  app.controller("checklogin",function($scope,$rootScope){
+        $rootScope.User=null;
+        $rootScope.indexUser=-1;
+        $rootScope.logoff=function(){
+          $rootScope.User=null;
+          $rootScope.indexUser=-1;
+          window.location.href="#!layout"
+        }
   })
 </script>
+<!--SCRIP-->
+<script src="../js/app/subject.js"></script>
+<script src="../js/app/quiz.js"> </script>
+<script src="../js/app/login.js"></script>
+<script src="../js/app/register.js"></script>
 </html>

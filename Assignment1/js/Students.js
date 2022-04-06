@@ -1,4 +1,4 @@
-﻿var lisths=[
+﻿[
     {
         "username": "teonv",
         "password": "iloveyou",
@@ -28,5 +28,15 @@
         "birthday": "1993-05-15",
         "schoolfee": "2000000",
         "marks": "0"
+    },
+    {
+        "username": "sa",
+        "password": "123",
+        "fullname": "Nguyễn Văn Tèo",
+        "email": "teonv@fpt.edu.vn",
+        "gender": "true",
+        "birthday": "1995-12-21",
+        "schoolfee": "1500000",
+        "marks": "0"
     }
-];
+]
