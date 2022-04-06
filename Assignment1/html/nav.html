@@ -1,6 +1,6 @@
 <div class="container"ng-controller="checklogin">
     <!-- Site Logo Here -->
-    <a class="navbar-brand" href="#"><img src="../Images/logo.png"width="24" height="20" alt=""> Tesing Online</a>
+    <a class="navbar-brand" href="layout"><img src="../Images/logo.png"width="24" height="20" alt=""> Tesing Online</a>
     <!-- Mobile Toggle Button -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileToggle" aria-controls="navbarMobileToggle" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarMobileToggle">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#!layout"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <a class="nav-link active" aria-current="page" href="layout"><i class="fa-solid fa-house"></i> Trang chủ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!gioithieu"><i class="fa-solid fa-earth-americas"></i> giới thiệu</a>
+                <a class="nav-link" href="gioithieu"><i class="fa-solid fa-earth-americas"></i> giới thiệu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#!lienhe"><i class="fa-solid fa-phone"></i> Liên hệ</a>
+              <a class="nav-link" href="lienhe"><i class="fa-solid fa-phone"></i> Liên hệ</a>
           </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa-solid fa-hand"></i> Gợi ý</a>
@@ -32,8 +32,8 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <div ng-show="User==null">
-                <li><a ng-click="intro==0" href="#!dangnhap" class="dropdown-item"><i class="bi bi-lock-fill"></i>Đăng nhập</a></li>
-                <li><a ng-click="intro==0" href="#!dangky" class="dropdown-item"><i class="bi bi-gear-fill"></i>Đăng ký</a></li>
+                <li><a ng-click="intro==0" href="dangnhap" class="dropdown-item"><i class="bi bi-lock-fill"></i>Đăng nhập</a></li>
+                <li><a ng-click="intro==0" href="dangky" class="dropdown-item"><i class="bi bi-gear-fill"></i>Đăng ký</a></li>
                 <li><a ng-click="intro==0" href="#" class="dropdown-item"><i class="bi bi-gear-wide-connected"></i>Quên mật khẩu</a></li>
             </div>
             <div ng-hide="User==null">
