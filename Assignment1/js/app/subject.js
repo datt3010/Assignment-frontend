@@ -22,10 +22,10 @@ app.controller("monhoc",function($scope,$http,$rootScope){
       sotrang=Math.ceil($scope.cacmonhoc.length/$scope.pageSize);
       $scope.start=(sotrang-1)*$scope.pageSize;
     }
-    // $scope.checkuser=function(){
-    //   if($rootScope.User==null){
-    //     alert('Bạn chưa đăng nhập!!');
-    //     return;
-    //   }
-    // }
+    $scope.checkuser=function(){
+      if($rootScope.User==null){
+        alert('Bạn chưa đăng nhập!!');
+        return;
+      }
+    }
   });
