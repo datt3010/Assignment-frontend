@@ -38,12 +38,12 @@ app.controller("loadquiz",function($scope,$http,$routeParams,$timeout){
     $scope.checkAnswer=function(){
       if(!$('input[name=pa]:checked'.length))return;
       var ans=$('input=[name=pa]:checked').val();
-      if(ans==$scope.pa){
-        alert('dung');
-      }
-      else{
-        alert('sai');
-      }
+      // if(ans==$scope.pa){
+      //   alert('dung');
+      // }
+      // else{
+      //   alert('sai');
+      // }
     }
   });
   app.filter('secondsToDateTime', [function() {
