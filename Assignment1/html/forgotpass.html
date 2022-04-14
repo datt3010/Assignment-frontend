@@ -1,0 +1,23 @@
+<div class="card text-left" style="width:800px;margin-left:10rem;">
+    <div class="card-header">
+        <span style="padding-left: 17rem; font-weight:bold;font-size: 20px;">Quên mật khẩu</span>
+    </div>
+    <div class="card-body">
+        <form name="form" class="was-validated">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+                <input type="text" name="username" ng-model="username" class="form-control" id="username"
+                    placeholder="" required maxlength="25" autofocus>
+                <small ng-show="form.username.$error.required" class="invalid-feedback">Vui lòng nhập họ tên</small>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="text" ng-model="email" name="email" class="form-control" id="email" placeholder=""
+                    required pattern="^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$">
+                <small ng-show="form.email.$error.required" class="invalid-feedback">Vui lòng nhập email</small>
+                <small ng-show="form.email.$error.pattern" class="invalid-feedback">Email không đúng định dạng</small>
+            </div>
+            <button ng-disabled="form.$invalid" ng-click="getpass()" type="button" class="btn btn-success">Xác nhận</button>
+    </div>
+    </form>
+</div>

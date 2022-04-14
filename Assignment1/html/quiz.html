@@ -20,49 +20,34 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">{{ch.Text}}</h5>
+              <form name="form">
               <div class="form-check"ng-repeat="pa in ch.Answers">
-                <input class="form-check-input" type="radio" name="pa" id="exampleRadios1" checked value="{{pa.Id}}">
-                <label class="form-check-label" for="exampleRadios1"style="float: left;">
+                <input class="form-check-input" type="radio" name="pa" id="{{pa.Id}}"  value="{{pa.Id}}" required>
+                <label class="form-check-label" for="{{pa.Id}}"style="float: left;">
                  {{pa.Text}}
                 </label>
               </div>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" style="float:left;margin-top: 5px;" data-bs-target="#exampleModal">
-  Submit
+<button type="button" ng-click="mark()" class="btn btn-primary" data-bs-toggle="modal"
+  style="float:left;margin-top: 5px;margin-right: 5rem;" data-bs-target="#exampleModal">
+  kiểm tra
 </button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       Bạn có chắc với câu trả lời của bạn?
-      </div>
-      <div class="modal-footer">
-        <button ng-click="checkAnswer()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Đồng ý</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>           
+</form>           
  </div>
             <div class="card-footer text-muted">
-             Điểm:{{ch.Marks}}
+             Điểm:{{tongdiem}}/{{caccauhoi.length}}
             </div>          
           </div>
           <div class="row">
             <div class="col-sm-6 ">
-              <input ng-click="first()" class="btn btn-primary " type="button" value="First" style="margin-top:10px;margin-left:4rem;width: 100px;">
-              <input ng-click="prev()" class="btn btn-primary " type="button" value="Previous" style="margin-top: 10px;width: 100px;">
-
+              <input ng-click="next()" class="btn btn-primary " type="button" value="Next"
+                style="margin-top:10px;float: left;width: 100px;">
             </div>
-            <div class="col-sm-6 ">
-              <input  ng-click="next()" class="btn btn-primary " type="button" value="Next" style="margin-top:10px;margin-left:10rem;width: 100px;">
-              <input ng-click="last()" class="btn btn-primary " type="button" value="Last" style="margin-top: 10px;width: 100px;">
+            <div class="col-sm-6">
+                <button type="button" ng-click="nopbai()" class="btn btn-primary" data-bs-toggle="modal"
+                  style="float:right;margin-top: 5px;" data-bs-target="#exampleModal">
+                  nộp bài
+                </button>
             </div>
           </div>
       </div>

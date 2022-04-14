@@ -14,83 +14,121 @@
 </head>
 <body ng-app="myapp">
       <div class="container">
-        <div class="card" style="width:800px;margin-left:15rem;">
+        <div class="card" style="width:800px;margin-left:10rem;">
           <h5 class="card-header text-center"><i class="fa-solid fa-registered"></i> Đăng ký tài khoản mới</h5>
-          <div class="card-body">
-            <form action="" class="was-validated" ng-controller="dangky">
+          <div class="card-body" ng-init="student.gender='true';student.marks='0'">
+            <form  name="form1" class="was-validated" ng-controller="dangky">
               <div class="form-floating mb-3 col-md-12">
-                <input type="text" class="form-control" placeholder="Username" id="Username" ng-model="sv.username" name="username" required autofocus>
-                <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                  Vui lòng nhập Username.
-                </div>
+                <input type="text" class="form-control" placeholder="Username" id="username" ng-model="student1.username" name="username" required minlength="6" pattern="^[^<>%@{}$]*$">
+                <small ng-show="form1.username.$error.minlength" class="invalid-feedback">
+                 tên tài khoản phải lớn hơn 6 ký tự
+                </small>
+                <small ng-show="form1.username.$error.required" class="invalid-feedback">
+                  vui lòng nhập tên tài khoản
+                 </small>
+                  <small ng-show="form1.username.$error.pattern" class="invalid-feedback">
+                    Tài khoản không được chứa ký tự đặc biệt.
+                  </small>
                 <label for="floatingInputUsername"><i class="fa-solid fa-user"></i> Username</label>
               </div>
               <div class="row">
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="password" class="form-control" id="password" ng-model="sv.password" placeholder="Password" id="password " required autofocus>
-                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                  <input minlength="7" type="password" class="form-control" name="password" ng-model="student1.password" placeholder="Password" id="password " required >
+                  <small ng-show="form1.password.$error.minlength" class="invalid-feedback">
+                    Password phải lớn hơn 7 ký tự
+                  </small>
+                  <small ng-show="form1.password.$error.required" class="invalid-feedback">
                     Vui lòng nhập Password.
-                  </div>
+                  </small>
                   <label for="floatingInputUsername"><i class="fa-solid fa-key"></i> Password</label>
                 </div>
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="password" class="form-control"  placeholder="Password" ng-model="cfpassword" id="cfpassword" name="cfpassword" required autofocus>
-                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                    Xác nhận Password.
-                  </div>  
+                  <input type="password" class="form-control" placeholder="Password" ng-model="repassword" id="repassword" name="repassword" required re-pass  >
+                  <small ng-show="form1.repassword.$error.required"class="invalid-feedback">
+                    vui lòng nhập xác nhận password
+                  </small>  
+                  <small ng-show="form1.repassword.$invalid && !form1.repassword.$error. " class="invalid-feedback">
+                    Password nhập không khớp
+                  </small>  
                   <label for="floatingInputUsername"><i class="fa-solid fa-key"></i> Confirm Password</label>
                 </div>
               </div>
               <div class="row">
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="text" class="form-control" id="lastname" ng-model="sv.lastname" name="lastname" placeholder="Last Name"required autofocus>
-                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                   Vui lòng nhập họ tên của bạn.
-                  </div>
-                  <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Họ</label>
+                  <input type="text" class="form-control" id="fullname" ng-model="student1.fullname" name="fullname" placeholder="Full name" required minlength="5"pattern="^[a-zA-Z,'.\-\s]+$">
+                  <small ng-show="form1.fullname.$error.required"  class="invalid-feedback">
+                   Vui lòng nhập họ và tên của bạn.
+                  </small>
+                  <small ng-show="form1.fullname.$error.pattern" class="invalid-feedback">
+                    Họ và tên không chứa ký tự số.
+                  </small>
+                    <small ng-show="form1.fullname.$error.minlength"  class="invalid-feedback">
+                      Họ và tên phải lớn hơn 5 ký tự
+                    </small>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Họ và tên</label>
                 </div>
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="text" class="form-control" id="firstname" ng-model="sv.firstname" name="firstname" placeholder="First Name" required autofocus>
-                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                   Vui lòng nhập tên của bạn.
-                   </div>
-                  <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Tên</label>
+                  <input type="number" class="form-control" id="fee" ng-model="student1.fee" name="fee" placeholder="First Name" required min="2000000">
+                  <small ng-show="form1.fee.$error.required" class="invalid-feedback">
+                   Vui lòng nhập học phí của bạn.
+                   </small>
+                    <small ng-show="form1.fee.$error.min" class="invalid-feedback">
+                     Học phí phải hơn 2 triệu.
+                    </small>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Học phí</label>
                 </div>
               </div>
               <div class="row">
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="text" class="form-control" id="phonenumber" ng-model="sv.phonenumber" name="phonenumber" placeholder="Phone" required autofocus>
-                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                  <input type="text" class="form-control" id="phonenumber" ng-model="student1.phonenumber" name="phonenumber" placeholder="phonenumber" required pattern="[0-9]{10}">
+                  <small ng-show="form1.phonenumber.$error.required" class="invalid-feedback">
                     Vui lòng nhập Số điện thoại của bạn.
-                    </div>
+                    </small>
+                    <small ng-show="form1.phonenumber.$error.pattern" class="invalid-feedback">
+                     Số điện thoại không đúng định dạng.
+                    </small>
                   <label for="floatingInputUsername"><i class="fa-solid fa-phone"></i> PhoneNumber</label>
                 </div>
                 <div class="form-floating mb-3 col-md-6">
-                  <input type="email" class="form-control" id="email" name="email" ng-model="sv.email" placeholder="Email"  required autofocus>
-                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                    Vui lòng nhập Email của bạn.
-                    </div>
-                  <label for="floatingInputUsername"><i class="fa-solid fa-at"></i> Email</label>
+                  <input type="email" class="form-control" id="email" ng-model="student1.email" name="email" placeholder="Phone" required>
+                  <small ng-show="form1.email.$error.required" class="invalid-feedback">
+                    Vui lòng nhập email của bạn.
+                    </small>
+                      <small ng-show="form1.email.$error.email" class="invalid-feedback">
+                        Email không đúng định dạng
+                      </small>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-phone"></i> Email</label>
                 </div>
               </div>
-              <div class="row mb-3 col-lg-3">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                  <label class="btn btn-outline-primary" for="btnradio1">Nam</label>
-                
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                  <label class="btn btn-outline-primary" for="btnradio2">Nữ</label>
+              <div class="row">
+                <div class="form-floating mb-3 col-md-6">
+                  <input type="date" class="form-control" id="date" name="date" ng-model="student1.birthday" placeholder="date" required>
+                  <small ng-show="form1.date.$error.required" class="invalid-feedback">
+                    Điền ngày sinh của bạn
+                    </small>
+                    <small ng-show="form1.date.$error.pattern" class="invalid-feedback">
+                      Điền ngày sinh của bạn
+                    </small>
+                  <label for="floatingInputUsername"><i class="fa-solid fa-at"></i> Birhday</label>
+                </div>
+                <div class="row mb-3 col-md-6">
+                  <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="height:45px;width: 200px;">
+                    <input ng-model="student1.gender" type="radio" class="btn-check" name="gender" id="btnradio1" value="true" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">Nam</label>
+                    <input ng-model="student1.gender" type="radio" class="btn-check" name="gender" id="btnradio2" value="false" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Nữ</label>
+                  </div>
                 </div>
               </div>
-              <div class="form-check">
+              <!-- <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
                  <a href="">Chấp nhập điều khoản và sử dụng</a>
                 </label>
-              </div>
+              </div> -->
               <div class="row">
-                <button type="button" id="submit" ng-click="dangky()" name="submit" class="btn btn-primary btn-lg col-ms-auto"><i class="fa-regular fa-registered"></i> Đăng ký</button>
-                <span class="text-center" style="margin-top: 10px;">Already have an account?<a href="../html/dangnhap.html">Đăng nhập</a></span>
+                <button id="submit" ng-disabled="form1.$invalid" ng-click="register()" class="btn btn-primary btn-lg col-ms-auto"><i class="fa-regular fa-registered"></i> Đăng ký</button>
+                <span class="text-center" style="margin-top: 10px;">Already have an account?<a href="#!dangnhap">Đăng nhập</a></span>
               </div>
             </form>          
            </div>

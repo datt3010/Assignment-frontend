@@ -28,18 +28,18 @@
         <div class="btn-group float-end">
             <a href="#" class="dropdown-toggle text-decoration-none text-light" data-bs-toggle="dropdown">
             <i class="bi bi-person-circle"></i>
-            <span><i class="fa-solid fa-user"></i>{{(User==null)?'Xin chào':User.fullname}}</span>
+            <span><i class="fa-solid fa-user"></i>{{(student==null)?'Tài khoản':student.username}}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-                <div ng-show="User==null">
+                <div ng-show="student==null">
                 <li><a ng-click="intro==0" href="#!dangnhap" class="dropdown-item"><i class="bi bi-lock-fill"></i>Đăng nhập</a></li>
                 <li><a ng-click="intro==0" href="#!dangky" class="dropdown-item"><i class="bi bi-gear-fill"></i>Đăng ký</a></li>
-                <li><a ng-click="intro==0" href="#" class="dropdown-item"><i class="bi bi-gear-wide-connected"></i>Quên mật khẩu</a></li>
+                <li><a ng-click="intro==0" href="#!quenmatkhau" class="dropdown-item"><i class="bi bi-gear-wide-connected"></i>Quên mật khẩu</a></li>
             </div>
-            <div ng-hide="User==null">
-                <li><a ng-click="intro==1" href="#" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Đổi mật khẩu</a></li>
-                <li><a ng-click="intro==1" href="#" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Profile</a></li>
-                <li><a ng-click="intro==1" href="#" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Quên mật khẩu</a></li>
+            <div ng-hide="student==null">
+                <li><a ng-click="intro==1" href="#!doimatkhau" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Đổi mật khẩu</a></li>
+                <li><a ng-click="intro==1" href="#!profileaccount" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Thông tin cá nhân</a></li>
+                <li><a ng-click="intro==1" href="#!quenmatkhau" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Quên mật khẩu</a></li>
                 <li><a ng-click="intro==1;logoff()" href="#" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Đăng xuất</a></li>
             </div>
             </ul>
