@@ -1,24 +1,20 @@
-app.controller("login",function($scope,$http,$rootScope){
-    $http.get("../js/Students.js").then(function(res){
-        $scope.lisths=res.data;
-      });
+app.controller("login",function($scope,$rootScope){
 $scope.dangnhap=function(){
   var u=$scope.username;
   var p=$scope.password;
-  var tc=false;
-   $scope.lisths.forEach(hs => {
+  var tc=true;
+   $rootScope.lisths.forEach(hs => {
      if(hs.username==u){
-       if(hs.password==p){
-            $scope.lisths=hs;
-            $rootScope.User=hs;
-            $rootScope.indexUser=hs.index;
+       if (hs.password == p) {
+           $rootScope.indexUser=hs.index;
+            $rootScope.student=hs;
           window.location.href="#!layout";
-          tc=true;
+          tc=false;
           return;
        };
      };
    });
-   if(tc==false){
+   if(tc==true){
      alert('Login Failed');
      window.location.href="#!dangnhap"
    }

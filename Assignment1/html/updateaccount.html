@@ -1,0 +1,54 @@
+<div class="card text-left" style="width:800px;margin-left:10rem;">
+    <div class="card-header">
+        <span style="padding-left: 17rem; font-weight:bold;font-size: 20px;">Thông tin tài khoản</span>
+    </div>
+    <div class="card-body">
+        <form name="form"class="was-validated">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Họ tên</label>
+        <input type="text" name="fullname" ng-model="student.fullname"  class="form-control" id="fullname" placeholder="" required maxlength="25" pattern="^[a-zA-Z\s]*$" autofocus>
+        <small ng-show="form.fullname.$error.required"  class="invalid-feedback">Vui lòng nhập họ tên</small>
+        <small ng-show="form.fullname.$error.pattern" class="invalid-feedback">ký tự không phải là số</small>
+    </div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="email" ng-model="student.email" name="email" class="form-control" id="email" placeholder="" required pattern="^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$">
+    <small ng-show="form.email.$error.required" class="invalid-feedback">Vui lòng nhập email</small>
+    <small ng-show="form.email.$error.pattern" class="invalid-feedback">Email không đúng định dạng</small>
+</div>
+<div class=" mb-3 ">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="height:40px;width: 200px;">
+        <input ng-model="student.gender" type="radio" class="btn-check" name="gender" id="btnradio1" value="true"
+            autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio1">Nam</label>
+        <input ng-model="student.gender" type="radio" class="btn-check" name="gender" id="btnradio2" value="false"
+            autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio2">Nữ</label>
+    </div>
+</div>
+<div class="mb-3">
+        <label for="floatingInputUsername"><i class="fa-solid fa-at"></i> Birhday</label>
+    <input type="text" class="form-control" id="date" name="date" ng-model="student.birthday" placeholder=""
+        required pattern="^\d{4}[\-\/\s]?((((0[13578])|(1[02]))[\-\/\s]?(([0-2][0-9])|(3[01])))|(((0[469])|(11))[\-\/\s]?(([0-2][0-9])|(30)))|(02[\-\/\s]?[0-2][0-9]))$">
+    <small ng-show="form.date.$error.required" class="invalid-feedback">
+        Điền ngày sinh của bạn
+    </small>
+    <small ng-show="form.date.$error.pattern" class="invalid-feedback">
+        Ngày sinh không hợp lệ! (yyyy/mm/dd)
+    </small>
+</div>
+    <div class="mb-3">
+        <label for="floatingInputUsername"><i class="fa-solid fa-fingerprint"></i> Học phí</label>
+        <input type="text" class="form-control" id="fee" ng-model="student.schoolfee" name="fee" placeholder=""
+            required fee pattern="^[1-9](?:[a-zA-Z0-9]*[A-Za-z]|[0-9]+)$">
+        <small ng-show="form.fee.$error.required" class="invalid-feedback">
+            Vui lòng nhập học phí của bạn.
+        </small>
+        <small ng-show="form.fee.$error.pattern" class="invalid-feedback">
+            Học phí không hợp lệ.
+        </small>
+    </div>
+<button ng-disabled="form.$invalid" ng-click="update()" type="button" class="btn btn-success">Cập nhật</button>
+    </div>
+    </form>
+</div>
